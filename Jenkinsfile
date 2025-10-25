@@ -8,6 +8,7 @@ pipeline {
     }
 
     stages {
+
         stage('Build Backend') {
             steps {
                 echo '⚙️ Construyendo imagen del backend...'
@@ -27,7 +28,7 @@ pipeline {
 
         stage('Deploy with Docker Compose') {
             steps {
-                echo '🚀 Desplegando contenedores...'
+                echo '🚀 Desplegando contenedores (PostgreSQL + Backend)...'
                 sh 'docker-compose down || true'
                 sh 'docker-compose up -d --build'
             }
@@ -43,3 +44,4 @@ pipeline {
         }
     }
 }
+
