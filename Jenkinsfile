@@ -8,14 +8,7 @@ pipeline {
     }
 
     stages {
-
-        stage('Checkout') {
-            steps {
-                echo '📦 Clonando código fuente...'
-                checkout scm
-            }
-        }
-
+    
         stage('Build Backend') {
             steps {
                 echo '⚙️ Construyendo imagen del backend...'
