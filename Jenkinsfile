@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_USER = 'tu_usuario_dockerhub'       // 🔹 Cambia esto por tu usuario real de Docker Hub
+        DOCKERHUB_USER = 'haroldbg'       // 🔹 Cambia esto por tu usuario real de Docker Hub
         DOCKERHUB_CREDENTIALS = 'dockerhub-token'     // 🔹 ID de credencial en Jenkins
         IMAGE_BACKEND = 'task-movil-api'
     }
