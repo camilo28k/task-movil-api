@@ -2,13 +2,12 @@ pipeline {
     agent any
 
     environment {
-        DOCKERHUB_USER = 'haroldbg'       // 🔹 Cambia esto por tu usuario real de Docker Hub
-        DOCKERHUB_CREDENTIALS = 'dockerhub-token'     // 🔹 ID de credencial en Jenkins
+        DOCKERHUB_USER = 'haroldbg'
+        DOCKERHUB_CREDENTIALS = 'dockerhub-token'
         IMAGE_BACKEND = 'task-movil-api'
     }
 
     stages {
-    
         stage('Build Backend') {
             steps {
                 echo '⚙️ Construyendo imagen del backend...'
@@ -28,7 +27,7 @@ pipeline {
 
         stage('Deploy with Docker Compose') {
             steps {
-                echo '🚀 Desplegando contenedores (PostgreSQL + Backend)...'
+                echo '🚀 Desplegando contenedores...'
                 sh 'docker-compose down || true'
                 sh 'docker-compose up -d --build'
             }
